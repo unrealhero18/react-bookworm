@@ -13,7 +13,7 @@ import rootReducer from './rootReducer';
 const store = createStore(
   rootReducer,
   composeWithDevTools( applyMiddleware( thunk ) )
-)
+);
 
 ReactDOM.render(
   <BrowserRouter>
