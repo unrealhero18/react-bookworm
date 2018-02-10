@@ -15,7 +15,7 @@ class LoginForm extends React.Component {
   };
 
   onChange = e => this.setState({
-    data: { ...this.state.data, [e.target.name]: e.target.value } 
+    data: { ...this.state.data, [e.target.name]: e.target.value }
   });
 
   validate = ( data ) => {
@@ -34,7 +34,9 @@ class LoginForm extends React.Component {
     if ( Object.keys( errors ).length === 0 ) {
       this.setState({ loading: true });
       this.props.submit( this.state.data )
-        .catch( err => this.setState({ errors: err.response.data.errors, loading: false }) );
+        .catch( err => {
+          this.setState({ errors: err.response.data.errors, loading: false })
+        });
     }
   };
 
